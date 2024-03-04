@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+    <style type="text/css">
+    .buttonstyle
+    {
+    width: 100px;
+    background: #ebebeb;
+    background-position: 0px -401px;
+    border: solid 1px #ebebeb;
+    color: #5b1a69;
+    height: 21px;
+    margin-top: -1px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+    font-family: Consolas;
+    }
+    .buttonstyle:hover {background: #c2c2c2;border: solid 1px #c2c2c2; background-position: 0px -501px;color: #5b1a69; }
+
+    .txtstyle
+    {
+        font-family: Consolas;
+        margin-top: -7px;
+        padding-bottom: -7px;
+    }
+
+    .inputstyle
+    {
+        border-radius: 5px;
+        border: solid 1px #ebebeb;
+        font-family: Consolas;
+        margin-top: -7px;
+        padding-bottom: -7px;
+    }
+
+    </style>
+    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascii Webcam</title>
+</head>
+<body style="background-image: url('/static/bg.jpg')">
+    <p style="text-align:center;font-family:Consolas">Camera To Ascii<br> </p>
+    <img src="{{ url_for('video_feed') }}" height="400" width="600" alt="Live Camera Feed">
+    <img src="{{ url_for('ascii_feed') }}" height="400" width="600" alt="Live Camera Feed2"> <br>
+    <br>
+    <p class = "txtstyle">Enter values for the R,G,B of the ascii Video:</p>
+    <p class = "txtstyle">(To reset the colors enter 0,0,0)</p>
+    <p class = "txtstyle">(To get black and white (calssic ascii) enter -1,-1,-1)</p>
+
+    <form action="{{ url_for('index')}}" method="post">
+
+    <label class="txtstyle" for="r">Enter R value:</label>
+    <input class="inputstyle" type="text" id="r" name="r"><br><br>
+
+    <label class="txtstyle" for="g">Enter G value:</label>
+    <input class="inputstyle" type="text" id="g" name="g"><br><br>
+
+    <label class="txtstyle" for="b">Enter B value:</label>
+    <input class="inputstyle" type="text" id="b" name="b"><br><br>
+
+    <input class="buttonstyle" type="submit" value="Submit">
+
+
+    </form>
+</body>
+</html>
